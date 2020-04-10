@@ -1,5 +1,5 @@
 
-const baseUrl = process.env.NODE_ENV === 'development' ? "http://192.168.0.101:3000" : "https://qqyifeng.cn:9001"
+const baseUrl = process.env.NODE_ENV === 'development' ? "localhost:3000" : "localhost:3000"
 
 const request = (opts) => {
 	uni.showLoading({
