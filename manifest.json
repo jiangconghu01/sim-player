@@ -89,7 +89,7 @@
         "title" : "Simple-music-player",
         "router" : {
             "mode" : "hash",
-            "base" : ""
+            "base" : "/"
         },
         "devServer" : {
             "https" : false,

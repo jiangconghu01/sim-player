@@ -8,7 +8,7 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
-					console.log(e) 
+					console.log(e)
 					// #ifdef H5
 					if(e.windowWidth > 760){
 						uni.showModal({
