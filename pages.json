@@ -1,0 +1,105 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+        ,{
+            "path" : "pages/video/index",
+            "style" : {
+				"navigationBarTitleText": "视频",
+				"app-plus":{
+					"titleNView": false,
+					"bounce" : "none", // 取消iOS回弹,避免和下拉刷新冲突
+					"disableScroll": true   // Android小程序卡顿 
+				}
+			}
+        }
+		,{
+		    "path" : "pages/account/index",
+		    "style" : {
+				"navigationBarTitleText": "账号"
+			}
+		}
+		,{
+		    "path" : "pages/music/index",
+		    "style" : {
+				"navigationBarTitleText": "音乐"
+			}
+		}
+        ,{
+            "path" : "pages/account/login",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/index/musicalbum",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/palyer/palyer",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/palyer/videoplayer",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/index/searchsonglist",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/video/searchmvlist",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/music/searchalbumlist",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#e8f4d9",
+		"backgroundColor": "#e8f4d9",
+		"navigationStyle":"custom"
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	},
+	"tabBar": {
+	    "color": "#888",
+	    "selectedColor": "#ff2419",
+	    "borderStyle": "white",
+	    "backgroundColor": "#f9f9f9",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/tab/t_1.png",
+	        "selectedIconPath": "static/tab/t_11.png",
+	        "text": "首页"
+	    }, {
+	        "pagePath": "pages/video/index",
+	        "iconPath": "static/tab/t_2.png",
+	        "selectedIconPath": "static/tab/t_21.png",
+	        "text": "视频"
+	    }, {
+	        "pagePath": "pages/music/index",
+	        "iconPath": "static/tab/t_3.png",
+	        "selectedIconPath": "static/tab/t_31.png",
+	        "text": "音乐"
+	    }, {
+	        "pagePath": "pages/account/index",
+	        "iconPath": "static/tab/t_5.png",
+	        "selectedIconPath": "static/tab/t_51.png",
+	        "text": "账号"
+	    }]
+	}
+}
