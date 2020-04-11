@@ -40,6 +40,7 @@
 				}
 			})
 			let audioPlayer = null;
+			let timer = null;
 			if(plat === 'H5'){
 				audioPlayer = uni.createInnerAudioContext()
 			}else{
@@ -48,21 +49,31 @@
 			//注册事件函数写在全局或者写在vuex（不然重复绑定，内存泄露）里都行，这里图方便挂着全局
 			Vue.prototype.$au_player = audioPlayer;
 			Vue.prototype.$au_player.onPlay(()=>{
+				console.log('playing')
 				Vue.prototype.cusPlay && Vue.prototype.cusPlay()
+				clearInterval(timer)
+				timer = setInterval(()=>{ //安卓和ios app 下onTimeUpdate事件在替换资源和seek之后不会触发，这里做手动触发
+					console.log('update')
+					Vue.prototype.cusTimeUpdate()
+				},240)
 			})
-			Vue.prototype.$au_player.onTimeUpdate(()=>{
-				Vue.prototype.cusTimeUpdate && Vue.prototype.cusTimeUpdate()
-			})
+			// Vue.prototype.$au_player.onTimeUpdate(()=>{
+			// 	console.log('update')
+			// 	Vue.prototype.cusTimeUpdate && Vue.prototype.cusTimeUpdate()
+			// })
 			Vue.prototype.$au_player.onEnded(()=>{
 				Vue.prototype.cusEnded && Vue.prototype.cusEnded()
+				clearInterval(timer)
 			})
 			Vue.prototype.$au_player.onError((err)=>{
 				console.log('play err:'+err)
 				this.setIsplayactive(false)
+				clearInterval(timer)
 			})
 			Vue.prototype.$au_player.onStop((res)=>{
 				console.log('play stop:'+res)
 				this.setIsplayactive(false)
+				clearInterval(timer)
 			})
 		},
 		onShow: function() {

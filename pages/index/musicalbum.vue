@@ -117,7 +117,7 @@ export default {
 				id
 			};
 			getMuListDetail(par).then(res => {
-				res.playlist.description = res.playlist.description.slice(0, 27)
+				// res.playlist.description = res.playlist.description.slice(0, 27)
 				const album = res.playlist;
 				this.bgimg = album.backgroundCoverUrl || album.coverImgUrl
 				this.album = album;

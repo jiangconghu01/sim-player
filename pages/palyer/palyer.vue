@@ -189,7 +189,7 @@
 					}else{
 						this.curPlayIndex = index>this.curPlayIndex?this.curPlayIndex:this.curPlayIndex-1;
 					}
-					console.log(this.curPlayIndex)
+					
 					this.copyAudioList = list;
 					this.setAudiolist(list)
 					this.setIsplayactive(true)
@@ -265,10 +265,7 @@
 					//app
 					this.$au_player.src = this.song.url;
 
-					this.playTime = this.song.time;
-					this.isPlay = true
-					this.setIsplayingmusic(true)
-					this.setIsplayactive(true)
+					
 					console.log('init')
 					
 				}).catch(e => {
@@ -305,9 +302,13 @@
 				})
 			},
 			onPlayFn() {
+				this.playTime = this.song.time;
+				this.isPlay = true
+				this.setIsplayingmusic(true)
+				this.setIsplayactive(true)
 				console.log('onplaying')
 			},
-			onTimeUpdateFn() {
+			onTimeUpdateFn() { 
 				const curtime = this.$au_player.currentTime
 				this.curPlayTime = Math.floor(curtime);
 				const lyric = this.lyric;
