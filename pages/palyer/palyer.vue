@@ -320,7 +320,7 @@
 						if(lyric[i] !==null && curtime - lyric[i].time< 0.15){
 							if(i>2) this.lytop = lyric[i-2].text;
 							if(i>1) this.lycur = lyric[i-1].text?lyric[i-1].text:'~~~~~~~~'
-							if(i<lyric.length-1) this.lybot = lyric[i+1].text;
+							if(i<lyric.length-1) this.lybot = lyric[i].text;
 							// update = true;
 							break;
 						}
