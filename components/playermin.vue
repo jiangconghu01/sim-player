@@ -72,7 +72,7 @@
 					animation-play-state: paused;
 				}
 				animation: rotate 10s linear .1s infinite;
-				box-shadow: 0 0 20rpx;
+				// box-shadow: 0 0 20rpx;
 			}
 			.btns{
 				height: 100rpx;

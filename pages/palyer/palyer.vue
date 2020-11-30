@@ -312,16 +312,12 @@
 				const curtime = this.$au_player.currentTime
 				this.curPlayTime = Math.floor(curtime);
 				const lyric = this.lyric;
-				// console.log(curtime,Math.floor(curtime))
 				if(update && lyric.length>0){
-					// update = false;
-					
 					for (let i = 0;i<lyric.length-1;i++) {
 						if(lyric[i] !==null && curtime - lyric[i].time< 0.15){
 							if(i>2) this.lytop = lyric[i-2].text;
 							if(i>1) this.lycur = lyric[i-1].text?lyric[i-1].text:'~~~~~~~~'
-							if(i<lyric.length-1) this.lybot = lyric[i].text;
-							// update = true;
+							if(i<lyric.length-1) this.lybot = lyric[i+1].text;
 							break;
 						}
 					}

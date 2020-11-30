@@ -55,7 +55,7 @@
 				timer = setInterval(()=>{ //安卓和ios app 下onTimeUpdate事件在替换资源和seek之后不会触发，这里做手动触发
 					console.log('update')
 					Vue.prototype.cusTimeUpdate()
-				},240)
+				},200)
 			})
 			// Vue.prototype.$au_player.onTimeUpdate(()=>{
 			// 	console.log('update')
